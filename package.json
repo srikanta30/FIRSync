@@ -1,0 +1,11 @@
+{
+  "name": "firsync",
+  "version": "1.0.0",
+  "description": "\"Comprehensive FIR Management System merging AI models, OpenAI, Google Cloud Vision, and PostgreSQL. Built on Node.js, React.js, and Flask for seamless integration, categorization, and efficient complaint handling.\"",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Aparna Goyal\\",
+  "license": "ISC"
+}
