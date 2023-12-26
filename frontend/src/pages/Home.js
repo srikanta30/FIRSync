@@ -3,8 +3,6 @@ import { useSession } from "next-auth/react";
 import { useRouter } from "next/router";
 import { signIn } from "next-auth/react";
 
-import Dashboard from "./Dashboard";
-
 export default function Home() {
   const { data: sessionData } = useSession();
   const router = useRouter();
