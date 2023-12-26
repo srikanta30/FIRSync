@@ -10,8 +10,8 @@ export default function Header() {
   const [setIsModalOpen] = useState(false);
 
   const navigation = [
-    { name: "Dashboard", href: "#", current: true },
-    { name: "Chat", href: "#", current: false },
+    { name: "Dashboard", href: "/dashboard", current: true },
+    { name: "Raise a Complaint", href: "/complaint", current: false},
   ];
 
   const userNavigation = [
@@ -19,6 +19,7 @@ export default function Header() {
     { name: "Settings", href: "#" },
     { name: "Sign out", href: "#" },
   ];
+
   return (
     <Disclosure as="nav" className="bg-gray-800">
       {({ open }) => (
@@ -61,7 +62,7 @@ export default function Header() {
                       className="rounded-full bg-white px-3.5 py-2 text-sm font-semibold text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-gray-50"
                       onClick={() => setIsModalOpen(true)}
                     >
-                      Raise a Complaint
+                      Upload FIR
                     </button>
                   </>
                   {/* Profile dropdown */}

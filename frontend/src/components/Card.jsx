@@ -21,7 +21,7 @@ const posts = [
     // More posts...
   ];
   
-  export default function Example() {
+  export default function Card() {
     return (
       <div className="bg-white py-12 sm:py-0">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
