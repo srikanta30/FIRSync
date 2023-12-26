@@ -1,4 +1,5 @@
 import { Fragment, useState } from "react";
+import { Link } from "react-router-dom";
 import { Disclosure, Menu, Transition } from "@headlessui/react";
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
 
@@ -6,12 +7,14 @@ import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
 import classnames from "classnames";
 import "../styles/globals.css";
 
+import CustomModal from "./CustomModal";
+
 export default function Header() {
-  const [setIsModalOpen] = useState(false);
+  const [isModalOpen, setIsModalOpen] = useState(false);
 
   const navigation = [
     { name: "Dashboard", href: "/dashboard", current: true },
-    { name: "Raise a Complaint", href: "/complaint", current: false},
+    { name: "Raise a Complaint", href: "/complaint", current: false },
   ];
 
   const userNavigation = [
@@ -37,9 +40,9 @@ export default function Header() {
                 <div className="hidden md:block">
                   <div className="ml-10 flex items-baseline space-x-4">
                     {navigation.map((item) => (
-                      <a
+                      <Link
                         key={item.name}
-                        href={item.href}
+                        to={item.href}
                         className={classnames(
                           item.current
                             ? "bg-gray-900 text-white"
@@ -49,7 +52,7 @@ export default function Header() {
                         aria-current={item.current ? "page" : undefined}
                       >
                         {item.name}
-                      </a>
+                      </Link>
                     ))}
                   </div>
                 </div>
@@ -64,6 +67,10 @@ export default function Header() {
                     >
                       Upload FIR
                     </button>
+                    <CustomModal
+                      modalOpen={isModalOpen}
+                      setModalOpen={setIsModalOpen}
+                    />
                   </>
                   {/* Profile dropdown */}
                   <Menu as="div" className="relative ml-3">
