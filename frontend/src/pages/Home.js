@@ -1,29 +1,39 @@
-import { useEffect } from "react";
-import { useSession } from "next-auth/react";
-import { useRouter } from "next/router";
-import { signIn } from "next-auth/react";
+/* eslint-disable jsx-a11y/img-redundant-alt */
+import { Box, styled } from "@mui/material";
+import "../styles/Home.css";
+
+import Container from "react-bootstrap/Container";
+import Row from "react-bootstrap/Row";
+import Col from "react-bootstrap/Col";
+
+import AuthForm from "../components/AuthForm";
+
+const Component = styled(Box)`
+  background: #756ab6;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+`;
 
 export default function Home() {
-  const { data: sessionData } = useSession();
-  const router = useRouter();
-
-  // Redirect users based on session status
-  useEffect(() => {
-    if (sessionData) {
-      // Redirect to the dashboard page if the user is logged in
-      router.push("/dashboard").catch((error) => {
-        // Handle the error if the redirection fails
-        console.error("Failed to redirect to the dashboard:", error);
-      });
-    }
-  }, [sessionData, router]);
-
-  // Render content for the home/login page
-return (
-    <div>
-        {/* Your home/login page content goes here */}
-        <h1>Welcome to FIRSync</h1>
-        <button onClick={() => signIn()}>Sign In</button>
-    </div>
-);
+  return (
+    <Component>
+      <Container>
+        <Row>
+          <Col xs={6} className="left-grid">
+            <img
+              class="title-image"
+              src={"/images/firsync-home.png"}
+              alt="Logo"
+            />
+          </Col>
+          <Col className="right-grid">
+            <AuthForm />
+          </Col>
+        </Row>
+      </Container>
+    </Component>
+  );
 }

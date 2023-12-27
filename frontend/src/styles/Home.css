@@ -1,0 +1,26 @@
+.title-image {
+  max-width: 100%;
+  width: 100%;
+  height: auto;
+  margin-top: -50px;
+}
+
+.left-grid {
+  width: 50%;
+  float: left;
+  padding: 50px;
+  box-sizing: border-box; 
+}
+
+.right-grid {
+  width: 50%;
+  float: right;
+  padding: 150px;
+  padding-top: 200px;
+  margin-top: 0px;
+  box-sizing: border-box; 
+}
+
+.btns {
+  margin: 5% 3% 5% 0;
+}
