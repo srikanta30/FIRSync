@@ -9,7 +9,7 @@ import Col from "react-bootstrap/Col";
 import AuthForm from "../components/AuthForm";
 
 const Component = styled(Box)`
-  background: #756ab6;
+  background: #ffffff;
   position: fixed;
   top: 0;
   left: 0;
