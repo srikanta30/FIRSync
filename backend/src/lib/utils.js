@@ -39,5 +39,13 @@ module.exports = {
     }
 
     return finaError.join("\n");
-  }
+  },
+  generateEmailOptions(email, otp) {
+    return {
+      from: "HACKATHON@RAJPOLICE.GOV.IN",
+      to: email,
+      subject: "Rajasthan Police | OTP to Verify Email",
+      message: `Your OTP is: ${otp}`,
+    };
+  },
 };

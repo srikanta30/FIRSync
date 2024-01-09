@@ -8,6 +8,7 @@
 		"start:watch": "nodemon ./bin/www"
 	},
 	"dependencies": {
+		"aadhaar-validator": "^1.1.0",
 		"axios": "^1.6.2",
 		"config": "^3.3.9",
 		"cors": "^2.8.5",
@@ -21,6 +22,7 @@
 		"multer": "^1.4.5-lts.1",
 		"mysql2": "^3.6.5",
 		"node-schedule": "^2.1.1",
+		"nodemailer": "^6.9.8",
 		"sequelize": "^6.35.2",
 		"sharp": "^0.33.1",
 		"uuid": "^9.0.1",

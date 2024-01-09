@@ -19,20 +19,20 @@ updateUser = async function (obj, query) {
   }
 };
 
-getUserByPhone = async function (phone) {
+getUserByEmail = async function (email) {
   try {
     return await db[constants.DB.table.USER_MASTER].findOne({
-      where: { phone },
+      where: { email },
     });
   } catch (err) {
     throw new Error(err);
   }
 };
 
-countUserByPhone = async function (phone) {
+countUserByEmail = async function (email) {
   try {
     return await db[constants.DB.table.USER_MASTER].findAndCountAll({
-      where: { phone },
+      where: { email },
       limit: 1,
     });
   } catch (err) {
@@ -48,11 +48,11 @@ createOtp = async function (body) {
   }
 };
 
-getOtpByPhone = async function (phone) {
+getOtpByEmail = async function (email) {
   try {
     return await db[constants.DB.table.OTP_MASTER].findOne({
       where: {
-        phone: phone,
+        email,
       },
       order: [["createdAt", "DESC"]],
     });
@@ -64,8 +64,8 @@ getOtpByPhone = async function (phone) {
 module.exports = {
   createUser,
   updateUser,
-  getUserByPhone,
-  countUserByPhone,
+  getUserByEmail,
+  countUserByEmail,
   createOtp,
-  getOtpByPhone
+  getOtpByEmail
 };

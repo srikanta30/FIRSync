@@ -5,7 +5,7 @@ module.exports = (sequelize, DataType) => {
     constant.DB.table.OTP_MASTER,
     {
       id: { primaryKey: true, autoIncrement: true, type: DataType.BIGINT },
-      phone: { type: DataType.BIGINT, allowNull: false },
+      email: { type: DataType.STRING, allowNull: false },
       otp: {
         type: DataType.BIGINT,
         allowNull: false,

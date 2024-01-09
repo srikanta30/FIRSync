@@ -13,13 +13,22 @@ module.exports = (sequelize, DataType) => {
         type: DataType.STRING,
         allowNull: false,
       },
+      email: {
+        type: DataType.STRING,
+        allowNull: false,
+      },
       phone: {
         type: DataType.BIGINT,
         allowNull: false,
       },
-      role: {
-        type: DataType.STRING,
+      aadhar: {
+        type: DataType.BIGINT,
         allowNull: false,
+      },
+      role: {
+        type: DataType.ENUM,
+        values: ["ADMIN", "USER"],
+        allowNull: false
       },
       createdAt: {
         allowNull: true,

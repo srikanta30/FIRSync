@@ -12,6 +12,7 @@ const utils = require("../lib/utils");
 const queryUsers = require("../lib/queries/users");
 const logger = require("../lib/logger");
 const jwt = require("jsonwebtoken");
+const send = require("../lib/email");
 
 exports.signInWithOtp = async (req, res) => {
   try {
@@ -27,9 +28,9 @@ exports.signInWithOtp = async (req, res) => {
       );
     }
 
-    const { phone } = req.body;
+    const { email } = req.body;
 
-    const userCountWithPhone = await queryUsers.countUserByPhone(phone);
+    const userCountWithPhone = await queryUsers.countUserByEmail(email);
 
     if (userCountWithPhone?.count === 0) {
       return response.sendResponse(
@@ -43,13 +44,17 @@ exports.signInWithOtp = async (req, res) => {
 
     const otp = utils.generateOtp();
 
-    await queryUsers.createOtp({ phone, otp });
-    console.log(`You OTP is ${otp}`);
+    await queryUsers.createOtp({ email, otp });
+
+    const emailOptions = utils.generateEmailOptions(email, otp);
+    const emailResponse = await send(emailOptions);
+
+    console.log(`OTP: ${otp}, sent successfully to ${email}.`);
 
     return response.sendResponse(
       constant.response_code.SUCCESS,
       "Success",
-      result,
+      emailResponse,
       res
     );
   } catch (err) {
@@ -77,12 +82,12 @@ exports.verifyOtp = async (req, res) => {
       );
     }
 
-    const { phone, otp } = req.body;
+    const { email, otp } = req.body;
 
-    const otpResponse = await queryUsers.getOtpByPhone(phone);
+    const otpResponse = await queryUsers.getOtpByEmail(email);
 
     if (otpResponse?.otp === +otp) {
-      const user = await queryUsers.getUserByPhone(phone);
+      const user = await queryUsers.getUserByEmail(email);
       const token = jwt.sign({ ...user }, process.env.JWT_SECRET);
       return response.sendResponse(
         constant.response_code.SUCCESS,
@@ -124,11 +129,11 @@ exports.registerUser = async (req, res) => {
       );
     }
 
-    const { phone, name } = req.body;
+    const { name, email, phone, aadhar } = req.body;
 
-    const userCountWithPhone = await queryUsers.countUserByPhone(phone);
+    const userCountWithEmail = await queryUsers.countUserByEmail(email);
 
-    if (userCountWithPhone?.count !== 0) {
+    if (userCountWithEmail?.count !== 0) {
       return response.sendResponse(
         constant.response_code.BAD_REQUEST,
         `User already exists.`,
@@ -137,17 +142,86 @@ exports.registerUser = async (req, res) => {
       );
     }
 
-    await queryUsers.createUser({ name, phone });
+    await queryUsers.createUser({ name, email, phone, aadhar, role: "USER" });
 
     const otp = utils.generateOtp();
 
-    await queryUsers.createOtp({ phone, otp });
-    const result = await send(phone, otp);
+    await queryUsers.createOtp({ email, otp });
+
+    const emailOptions = utils.generateEmailOptions(email, otp);
+    const emailResponse = await send(emailOptions);
+
+    console.log(`OTP: ${otp}, sent successfully to ${email}.`);
 
     return response.sendResponse(
       constant.response_code.SUCCESS,
       "Success",
-      result,
+      emailResponse,
+      res
+    );
+  } catch (err) {
+    console.log(err);
+    return response.sendResponse(
+      constant.response_code.INTERNAL_SERVER_ERROR,
+      err.message || constant.STRING_CONSTANTS.SOME_ERROR_OCCURED,
+      null,
+      res
+    );
+  }
+};
+
+exports.registerAdmin = async (req, res) => {
+  try {
+    let errors = await validationResult(req);
+
+    if (!errors.isEmpty()) {
+      return response.sendResponse(
+        constant.response_code.BAD_REQUEST,
+        utils.generateErrorMessage(errors),
+        null,
+        res,
+        errors
+      );
+    }
+
+    const { name, email, phone, aadhar } = req.body;
+
+    const userCountWithEmail = await queryUsers.countUserByEmail(email);
+
+    if (userCountWithEmail?.count !== 0) {
+      return response.sendResponse(
+        constant.response_code.BAD_REQUEST,
+        `User already exists.`,
+        null,
+        res
+      );
+    }
+
+    if (!email.toLowerCase().includes("@rajpolice.gov.in")) {
+      return response.sendResponse(
+        constant.response_code.UNAUTHORIZED,
+        constant.STRING_CONSTANTS.INVALID_AUTHORIZATION,
+        null,
+        res,
+        null
+      );
+    }
+
+    await queryUsers.createUser({ name, email, phone, aadhar, role: "ADMIN" });
+
+    const otp = utils.generateOtp();
+
+    await queryUsers.createOtp({ email, otp });
+
+    const emailOptions = utils.generateEmailOptions(email, otp);
+    const emailResponse = await send(emailOptions);
+
+    console.log(`OTP: ${otp}, sent successfully to ${email}.`);
+
+    return response.sendResponse(
+      constant.response_code.SUCCESS,
+      "Success",
+      emailResponse,
       res
     );
   } catch (err) {
