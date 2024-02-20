@@ -1,0 +1,379 @@
+{
+	"info": {
+		"_postman_id": "0e5e296e-4b80-4f40-8406-059e1919c88f",
+		"name": "FIRSYNC",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "26225344"
+	},
+	"item": [
+		{
+			"name": "ocr",
+			"item": [
+				{
+					"name": "upload",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhVmFsdWVzIjp7ImlkIjoxLCJuYW1lIjoiU3Jpa2FudGEgQmFuZXJqZWUiLCJlbWFpbCI6InNyaWthbnRhYmFuZXJqZWVAcmFqcG9saWNlLmdvdi5pbiIsInBob25lIjo4NTEzOTM4NzE2LCJhYWRoYXIiOjUwNTk3MTI1MTk0NCwicm9sZSI6IkFETUlOIiwiY3JlYXRlZEF0IjoxNzA0ODE0NzU3MTc5LCJ1cGRhdGVkQXQiOjE3MDQ4MTQ3NTcxNzl9LCJfcHJldmlvdXNEYXRhVmFsdWVzIjp7ImlkIjoxLCJuYW1lIjoiU3Jpa2FudGEgQmFuZXJqZWUiLCJlbWFpbCI6InNyaWthbnRhYmFuZXJqZWVAcmFqcG9saWNlLmdvdi5pbiIsInBob25lIjo4NTEzOTM4NzE2LCJhYWRoYXIiOjUwNTk3MTI1MTk0NCwicm9sZSI6IkFETUlOIiwiY3JlYXRlZEF0IjoxNzA0ODE0NzU3MTc5LCJ1cGRhdGVkQXQiOjE3MDQ4MTQ3NTcxNzl9LCJ1bmlxbm8iOjEsIl9jaGFuZ2VkIjp7fSwiX29wdGlvbnMiOnsiaXNOZXdSZWNvcmQiOmZhbHNlLCJfc2NoZW1hIjpudWxsLCJfc2NoZW1hRGVsaW1pdGVyIjoiIiwicmF3Ijp0cnVlLCJhdHRyaWJ1dGVzIjpbImlkIiwibmFtZSIsImVtYWlsIiwicGhvbmUiLCJhYWRoYXIiLCJyb2xlIiwiY3JlYXRlZEF0IiwidXBkYXRlZEF0Il19LCJpc05ld1JlY29yZCI6ZmFsc2UsImlhdCI6MTcwNDgxNDg3Mn0.EfZof6pda8Yj28Guu_AZwvJUJQBBdEgVDOPvAgHBHpk",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "image",
+									"type": "file",
+									"src": []
+								}
+							]
+						},
+						"url": {
+							"raw": "localhost:8080/api/v1/ocr/upload",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"ocr",
+								"upload"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "users",
+			"item": [
+				{
+					"name": "signin",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"email\": \"srikantabanerjee@rajpolice.gov.in\",\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/api/v1/users/signin",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"users",
+								"signin"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "register",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"email\" : \"srikantabanerjee30@gmail.com\",\n    \"name\" : \"Srikanta Banerjee\",\n    \"phone\" : 8513938716,\n    \"aadhar\": \"505971251944\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/api/v1/users/register",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"users",
+								"register"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "admin",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"email\" : \"srikantabanerjee@rajpolice.gov.in\",\n    \"name\" : \"Srikanta Banerjee\",\n    \"phone\" : 8513938716,\n    \"aadhar\": \"505971251944\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/api/v1/users/register/admin",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"users",
+								"register",
+								"admin"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "verify",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"email\" : \"srikantabanerjee@rajpolice.gov.in\",\n    \"otp\": 247954\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/api/v1/users/verify",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"users",
+								"verify"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "reports",
+			"item": [
+				{
+					"name": "all",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhVmFsdWVzIjp7ImlkIjoxLCJuYW1lIjoiU3Jpa2FudGEgQmFuZXJqZWUiLCJlbWFpbCI6InNyaWthbnRhYmFuZXJqZWVAcmFqcG9saWNlLmdvdi5pbiIsInBob25lIjo4NTEzOTM4NzE2LCJhYWRoYXIiOjUwNTk3MTI1MTk0NCwicm9sZSI6IkFETUlOIiwiY3JlYXRlZEF0IjoxNzA0ODE0NzU3MTc5LCJ1cGRhdGVkQXQiOjE3MDQ4MTQ3NTcxNzl9LCJfcHJldmlvdXNEYXRhVmFsdWVzIjp7ImlkIjoxLCJuYW1lIjoiU3Jpa2FudGEgQmFuZXJqZWUiLCJlbWFpbCI6InNyaWthbnRhYmFuZXJqZWVAcmFqcG9saWNlLmdvdi5pbiIsInBob25lIjo4NTEzOTM4NzE2LCJhYWRoYXIiOjUwNTk3MTI1MTk0NCwicm9sZSI6IkFETUlOIiwiY3JlYXRlZEF0IjoxNzA0ODE0NzU3MTc5LCJ1cGRhdGVkQXQiOjE3MDQ4MTQ3NTcxNzl9LCJ1bmlxbm8iOjEsIl9jaGFuZ2VkIjp7fSwiX29wdGlvbnMiOnsiaXNOZXdSZWNvcmQiOmZhbHNlLCJfc2NoZW1hIjpudWxsLCJfc2NoZW1hRGVsaW1pdGVyIjoiIiwicmF3Ijp0cnVlLCJhdHRyaWJ1dGVzIjpbImlkIiwibmFtZSIsImVtYWlsIiwicGhvbmUiLCJhYWRoYXIiLCJyb2xlIiwiY3JlYXRlZEF0IiwidXBkYXRlZEF0Il19LCJpc05ld1JlY29yZCI6ZmFsc2UsImlhdCI6MTcwNDgxNDg3Mn0.EfZof6pda8Yj28Guu_AZwvJUJQBBdEgVDOPvAgHBHpk",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "localhost:8080/api/v1/reports",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"reports"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "single",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhVmFsdWVzIjp7ImlkIjoxLCJuYW1lIjoiU3Jpa2FudGEgQmFuZXJqZWUiLCJlbWFpbCI6InNyaWthbnRhYmFuZXJqZWVAcmFqcG9saWNlLmdvdi5pbiIsInBob25lIjo4NTEzOTM4NzE2LCJhYWRoYXIiOjUwNTk3MTI1MTk0NCwicm9sZSI6IkFETUlOIiwiY3JlYXRlZEF0IjoxNzA0ODE0NzU3MTc5LCJ1cGRhdGVkQXQiOjE3MDQ4MTQ3NTcxNzl9LCJfcHJldmlvdXNEYXRhVmFsdWVzIjp7ImlkIjoxLCJuYW1lIjoiU3Jpa2FudGEgQmFuZXJqZWUiLCJlbWFpbCI6InNyaWthbnRhYmFuZXJqZWVAcmFqcG9saWNlLmdvdi5pbiIsInBob25lIjo4NTEzOTM4NzE2LCJhYWRoYXIiOjUwNTk3MTI1MTk0NCwicm9sZSI6IkFETUlOIiwiY3JlYXRlZEF0IjoxNzA0ODE0NzU3MTc5LCJ1cGRhdGVkQXQiOjE3MDQ4MTQ3NTcxNzl9LCJ1bmlxbm8iOjEsIl9jaGFuZ2VkIjp7fSwiX29wdGlvbnMiOnsiaXNOZXdSZWNvcmQiOmZhbHNlLCJfc2NoZW1hIjpudWxsLCJfc2NoZW1hRGVsaW1pdGVyIjoiIiwicmF3Ijp0cnVlLCJhdHRyaWJ1dGVzIjpbImlkIiwibmFtZSIsImVtYWlsIiwicGhvbmUiLCJhYWRoYXIiLCJyb2xlIiwiY3JlYXRlZEF0IiwidXBkYXRlZEF0Il19LCJpc05ld1JlY29yZCI6ZmFsc2UsImlhdCI6MTcwNDgxNDg3Mn0.EfZof6pda8Yj28Guu_AZwvJUJQBBdEgVDOPvAgHBHpk",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "localhost:8080/api/v1/reports/1",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"reports",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "create",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhVmFsdWVzIjp7ImlkIjoxLCJuYW1lIjoiU3Jpa2FudGEgQmFuZXJqZWUiLCJlbWFpbCI6InNyaWthbnRhYmFuZXJqZWVAcmFqcG9saWNlLmdvdi5pbiIsInBob25lIjo4NTEzOTM4NzE2LCJhYWRoYXIiOjUwNTk3MTI1MTk0NCwicm9sZSI6IkFETUlOIiwiY3JlYXRlZEF0IjoxNzA0ODE0NzU3MTc5LCJ1cGRhdGVkQXQiOjE3MDQ4MTQ3NTcxNzl9LCJfcHJldmlvdXNEYXRhVmFsdWVzIjp7ImlkIjoxLCJuYW1lIjoiU3Jpa2FudGEgQmFuZXJqZWUiLCJlbWFpbCI6InNyaWthbnRhYmFuZXJqZWVAcmFqcG9saWNlLmdvdi5pbiIsInBob25lIjo4NTEzOTM4NzE2LCJhYWRoYXIiOjUwNTk3MTI1MTk0NCwicm9sZSI6IkFETUlOIiwiY3JlYXRlZEF0IjoxNzA0ODE0NzU3MTc5LCJ1cGRhdGVkQXQiOjE3MDQ4MTQ3NTcxNzl9LCJ1bmlxbm8iOjEsIl9jaGFuZ2VkIjp7fSwiX29wdGlvbnMiOnsiaXNOZXdSZWNvcmQiOmZhbHNlLCJfc2NoZW1hIjpudWxsLCJfc2NoZW1hRGVsaW1pdGVyIjoiIiwicmF3Ijp0cnVlLCJhdHRyaWJ1dGVzIjpbImlkIiwibmFtZSIsImVtYWlsIiwicGhvbmUiLCJhYWRoYXIiLCJyb2xlIiwiY3JlYXRlZEF0IiwidXBkYXRlZEF0Il19LCJpc05ld1JlY29yZCI6ZmFsc2UsImlhdCI6MTcwNDgxNDg3Mn0.EfZof6pda8Yj28Guu_AZwvJUJQBBdEgVDOPvAgHBHpk",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"action_taken_description\": \"The case was registered and the investigation was handed over to SK. Tajuddin\",\n    \"action_taken_section\": \"Not mentioned\",\n    \"address\": \"O-Putul Guosh, Uttascayan Kalkuales VIP Road, Ps Airport, Kolkata - 700136\",\n    \"date_of_action_taken\": \"11-01-18\",\n    \"date_of_birth\": \"Not mentioned\",\n    \"details_of_properties_stolen_involved\": \"Not mentioned\",\n    \"diary_reference_entry_no\": \"578\",\n    \"father_or_husband_name\": \"Madhusudan Bhattacharjee\",\n    \"gd_no\": \"2238\",\n    \"information_received_date\": \"11-01-18\",\n    \"inquest_report_ud_case_no\": \"Not mentioned\",\n    \"investigator_name\": \"SK. Tajuddin\",\n    \"known_suspected_unknown_accused\": \"Agarwal Movers & Packers, Owner name - Ravi Kumar\",\n    \"name\": \"Chiranjib Bhattacharjee\",\n    \"nationality\": \"Indian\",\n    \"occurrence_of_offence_day\": \"21.15 hrs\",\n    \"other_acts_sections\": \"4201 406 120B IP.C\",\n    \"place_of_occurrence_direction_distance\": \"Approx\",\n    \"reasons_for_delay_in_reporting\": \"Not mentioned\",\n    \"sections\": \"420/4061V/Act 120 13\",\n    \"time_of_occurrence\": \"21.15 hrs\",\n    \"total_value_of_properties\": \"Not mentioned\",\n    \"type_of_information\": \"Written / Oral\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/api/v1/reports",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"reports"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "generate",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhVmFsdWVzIjp7ImlkIjoxLCJuYW1lIjoiU3Jpa2FudGEgQmFuZXJqZWUiLCJlbWFpbCI6InNyaWthbnRhYmFuZXJqZWVAcmFqcG9saWNlLmdvdi5pbiIsInBob25lIjo4NTEzOTM4NzE2LCJhYWRoYXIiOjUwNTk3MTI1MTk0NCwicm9sZSI6IkFETUlOIiwiY3JlYXRlZEF0IjoxNzA0ODE0NzU3MTc5LCJ1cGRhdGVkQXQiOjE3MDQ4MTQ3NTcxNzl9LCJfcHJldmlvdXNEYXRhVmFsdWVzIjp7ImlkIjoxLCJuYW1lIjoiU3Jpa2FudGEgQmFuZXJqZWUiLCJlbWFpbCI6InNyaWthbnRhYmFuZXJqZWVAcmFqcG9saWNlLmdvdi5pbiIsInBob25lIjo4NTEzOTM4NzE2LCJhYWRoYXIiOjUwNTk3MTI1MTk0NCwicm9sZSI6IkFETUlOIiwiY3JlYXRlZEF0IjoxNzA0ODE0NzU3MTc5LCJ1cGRhdGVkQXQiOjE3MDQ4MTQ3NTcxNzl9LCJ1bmlxbm8iOjEsIl9jaGFuZ2VkIjp7fSwiX29wdGlvbnMiOnsiaXNOZXdSZWNvcmQiOmZhbHNlLCJfc2NoZW1hIjpudWxsLCJfc2NoZW1hRGVsaW1pdGVyIjoiIiwicmF3Ijp0cnVlLCJhdHRyaWJ1dGVzIjpbImlkIiwibmFtZSIsImVtYWlsIiwicGhvbmUiLCJhYWRoYXIiLCJyb2xlIiwiY3JlYXRlZEF0IiwidXBkYXRlZEF0Il19LCJpc05ld1JlY29yZCI6ZmFsc2UsImlhdCI6MTcwNDgxNDg3Mn0.EfZof6pda8Yj28Guu_AZwvJUJQBBdEgVDOPvAgHBHpk",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"text\" : \"This is a police complaint form. The text is in Bengali. The translation is as follows:\\n\\n[Emblem of the West Bengal Police]\\nBidhannagar Women P.S.\\nFirst Information Report\\n1. District: [Blank]\\n2. (a) P.S.: Bidhannagar\\n(b) Whether the case under section 154 Cr. P.C. at P.S.: Yes/No. [Yes]\\n3. (a) Act: 498A/307 IPC\\n(b) Section: 498A/307 IPC\\n(c) Other Acts & Sections:\\n4. (a) General Diary Reference: Entry No.: 187\\n(b) Date: 22.03.18\\n(c) Time: 11:45 hrs\\n5. Place of Occurrence (a) Direction and Distance from P.S.: [Blank]\\n(b) (i) Place of Occurrence: Boro Park, P.N.A-160, Salt Lake, Sec-8\\n(ii) In case outside limit of the Police Station, then the name of P.S.: [Blank]\\n6. Complainant / Informant\\n(a) Name: Tapasri Santra\\n(b) Father's/Husband's Name: Tapan Santra\\n(c) Date/Year of Birth: 30 yrs\\n(d) Nationality: Indian\\n(e) Address: Pole Bright, Boro Park, P.N.A-160, Salt Lake, Sec-V\\n(f) Occupation: [Blank]\\n(g) Details of known/suspected/unknown Accused with full particulars (Attach separate sheet, if required):\\nTapan Santra (Husband)\\nAge - 36 not detected\\nP.O. & P.S. - Baruipur\\nDist - South 24 Parganas\\nH.No. 18A-168, Salt Lake City, Kolkata\\n7. Reason(s) for delay in reporting by the Complainant / Informant: [Blank]\\n8. Particulars of Properties stolen/involved: (Attach separate sheet, if required): [Blank]\\n9. Total value of Properties stolen / involved: [Blank]\\n10. Total value of Properties stolen / involved: [Blank]\\n11. Inquest report/U.D. Case No., if any: [Blank]\\n12. FIR Contents: (Attach separate sheet)\\nThe original written complaint of the complainant which is treated as FIR is attached herewith.\\n13. Action taken: Since the above report reveals commission of offence u/s 498A/307 IPC, registered the case and took up the investigation/directed [Blank] to take up the investigation.\\nTransferred to P.S.: [Blank] on point of jurisdiction.\\nFIR read over to the Complainant/Informant.\\nSignature/Thumb Impression of the Complainant / Informant: [Blank]\\nDate: 22.03.18\\nOfficer-in-Charge\\nBidhannagar Women P.S.\\nRank: S.I\\nName: Aparna Das Mukherjee\\nNumber if any: SBK 168/2018-19\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/api/v1/reports/generate",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"reports",
+								"generate"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "suggest",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhVmFsdWVzIjp7ImlkIjoxLCJuYW1lIjoiU3Jpa2FudGEgQmFuZXJqZWUiLCJlbWFpbCI6InNyaWthbnRhYmFuZXJqZWVAcmFqcG9saWNlLmdvdi5pbiIsInBob25lIjo4NTEzOTM4NzE2LCJhYWRoYXIiOjUwNTk3MTI1MTk0NCwicm9sZSI6IkFETUlOIiwiY3JlYXRlZEF0IjoxNzA0ODE0NzU3MTc5LCJ1cGRhdGVkQXQiOjE3MDQ4MTQ3NTcxNzl9LCJfcHJldmlvdXNEYXRhVmFsdWVzIjp7ImlkIjoxLCJuYW1lIjoiU3Jpa2FudGEgQmFuZXJqZWUiLCJlbWFpbCI6InNyaWthbnRhYmFuZXJqZWVAcmFqcG9saWNlLmdvdi5pbiIsInBob25lIjo4NTEzOTM4NzE2LCJhYWRoYXIiOjUwNTk3MTI1MTk0NCwicm9sZSI6IkFETUlOIiwiY3JlYXRlZEF0IjoxNzA0ODE0NzU3MTc5LCJ1cGRhdGVkQXQiOjE3MDQ4MTQ3NTcxNzl9LCJ1bmlxbm8iOjEsIl9jaGFuZ2VkIjp7fSwiX29wdGlvbnMiOnsiaXNOZXdSZWNvcmQiOmZhbHNlLCJfc2NoZW1hIjpudWxsLCJfc2NoZW1hRGVsaW1pdGVyIjoiIiwicmF3Ijp0cnVlLCJhdHRyaWJ1dGVzIjpbImlkIiwibmFtZSIsImVtYWlsIiwicGhvbmUiLCJhYWRoYXIiLCJyb2xlIiwiY3JlYXRlZEF0IiwidXBkYXRlZEF0Il19LCJpc05ld1JlY29yZCI6ZmFsc2UsImlhdCI6MTcwNDgxNDg3Mn0.EfZof6pda8Yj28Guu_AZwvJUJQBBdEgVDOPvAgHBHpk",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"text\" : \"This is a police complaint form. The text is in Bengali. The translation is as follows:\\n\\n[Emblem of the West Bengal Police]\\nBidhannagar Women P.S.\\nFirst Information Report\\n1. District: [Blank]\\n2. (a) P.S.: Bidhannagar\\n(b) Whether the case under section 154 Cr. P.C. at P.S.: Yes/No. [Yes]\\n3. (a) Act: 498A/307 IPC\\n(b) Section: 498A/307 IPC\\n(c) Other Acts & Sections:\\n4. (a) General Diary Reference: Entry No.: 187\\n(b) Date: 22.03.18\\n(c) Time: 11:45 hrs\\n5. Place of Occurrence (a) Direction and Distance from P.S.: [Blank]\\n(b) (i) Place of Occurrence: Boro Park, P.N.A-160, Salt Lake, Sec-8\\n(ii) In case outside limit of the Police Station, then the name of P.S.: [Blank]\\n6. Complainant / Informant\\n(a) Name: Tapasri Santra\\n(b) Father's/Husband's Name: Tapan Santra\\n(c) Date/Year of Birth: 30 yrs\\n(d) Nationality: Indian\\n(e) Address: Pole Bright, Boro Park, P.N.A-160, Salt Lake, Sec-V\\n(f) Occupation: [Blank]\\n(g) Details of known/suspected/unknown Accused with full particulars (Attach separate sheet, if required):\\nTapan Santra (Husband)\\nAge - 36 not detected\\nP.O. & P.S. - Baruipur\\nDist - South 24 Parganas\\nH.No. 18A-168, Salt Lake City, Kolkata\\n7. Reason(s) for delay in reporting by the Complainant / Informant: [Blank]\\n8. Particulars of Properties stolen/involved: (Attach separate sheet, if required): [Blank]\\n9. Total value of Properties stolen / involved: [Blank]\\n10. Total value of Properties stolen / involved: [Blank]\\n11. Inquest report/U.D. Case No., if any: [Blank]\\n12. FIR Contents: (Attach separate sheet)\\nThe original written complaint of the complainant which is treated as FIR is attached herewith.\\n13. Action taken: Since the above report reveals commission of offence u/s 498A/307 IPC, registered the case and took up the investigation/directed [Blank] to take up the investigation.\\nTransferred to P.S.: [Blank] on point of jurisdiction.\\nFIR read over to the Complainant/Informant.\\nSignature/Thumb Impression of the Complainant / Informant: [Blank]\\nDate: 22.03.18\\nOfficer-in-Charge\\nBidhannagar Women P.S.\\nRank: S.I\\nName: Aparna Das Mukherjee\\nNumber if any: SBK 168/2018-19\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/api/v1/reports/suggest",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"reports",
+								"suggest"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update",
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhVmFsdWVzIjp7ImlkIjoxLCJuYW1lIjoiU3Jpa2FudGEgQmFuZXJqZWUiLCJlbWFpbCI6InNyaWthbnRhYmFuZXJqZWVAcmFqcG9saWNlLmdvdi5pbiIsInBob25lIjo4NTEzOTM4NzE2LCJhYWRoYXIiOjUwNTk3MTI1MTk0NCwicm9sZSI6IkFETUlOIiwiY3JlYXRlZEF0IjoxNzA0ODE0NzU3MTc5LCJ1cGRhdGVkQXQiOjE3MDQ4MTQ3NTcxNzl9LCJfcHJldmlvdXNEYXRhVmFsdWVzIjp7ImlkIjoxLCJuYW1lIjoiU3Jpa2FudGEgQmFuZXJqZWUiLCJlbWFpbCI6InNyaWthbnRhYmFuZXJqZWVAcmFqcG9saWNlLmdvdi5pbiIsInBob25lIjo4NTEzOTM4NzE2LCJhYWRoYXIiOjUwNTk3MTI1MTk0NCwicm9sZSI6IkFETUlOIiwiY3JlYXRlZEF0IjoxNzA0ODE0NzU3MTc5LCJ1cGRhdGVkQXQiOjE3MDQ4MTQ3NTcxNzl9LCJ1bmlxbm8iOjEsIl9jaGFuZ2VkIjp7fSwiX29wdGlvbnMiOnsiaXNOZXdSZWNvcmQiOmZhbHNlLCJfc2NoZW1hIjpudWxsLCJfc2NoZW1hRGVsaW1pdGVyIjoiIiwicmF3Ijp0cnVlLCJhdHRyaWJ1dGVzIjpbImlkIiwibmFtZSIsImVtYWlsIiwicGhvbmUiLCJhYWRoYXIiLCJyb2xlIiwiY3JlYXRlZEF0IiwidXBkYXRlZEF0Il19LCJpc05ld1JlY29yZCI6ZmFsc2UsImlhdCI6MTcwNDgxNDg3Mn0.EfZof6pda8Yj28Guu_AZwvJUJQBBdEgVDOPvAgHBHpk",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"action_taken_description\": \"The case was registered and the investigation was handed over to SK. Tajuddin.\",\n    \"action_taken_section\": \"Not mentioned\",\n    \"address\": \"O-Putul Guosh, Uttascayan Kalkuales VIP Road, Ps Airport, Kolkata - 700136\",\n    \"date_of_action_taken\": \"11-01-18\",\n    \"date_of_birth\": \"Not mentioned\",\n    \"details_of_properties_stolen_involved\": \"Not mentioned\",\n    \"diary_reference_entry_no\": \"578\",\n    \"father_or_husband_name\": \"Madhusudan Bhattacharjee\",\n    \"gd_no\": \"2238\",\n    \"information_received_date\": \"11-01-18\",\n    \"inquest_report_ud_case_no\": \"Not mentioned\",\n    \"investigator_name\": \"SK. Tajuddin\",\n    \"known_suspected_unknown_accused\": \"Agarwal Movers & Packers, Owner name - Ravi Kumar\",\n    \"name\": \"Chiranjib Bhattacharjee\",\n    \"nationality\": \"Indian\",\n    \"occurrence_of_offence_day\": \"21.15 hrs\",\n    \"other_acts_sections\": \"4201 406 120B IP.C\",\n    \"place_of_occurrence_direction_distance\": \"Approx\",\n    \"reasons_for_delay_in_reporting\": \"Not mentioned\",\n    \"sections\": \"420/4061V/Act 120 13\",\n    \"time_of_occurrence\": \"21.15 hrs\",\n    \"total_value_of_properties\": \"Not mentioned\",\n    \"type_of_information\": \"Written / Oral\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/api/v1/reports/1",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"reports",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
